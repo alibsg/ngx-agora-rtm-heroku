@@ -1,5 +1,5 @@
 var express = require('express');
-import { RtmTokenBuilder, RtmRole } from 'agora-access-token';
+const {RtmTokenBuilder, RtmRole} = require('agora-access-token')
 
 var PORT = process.env.PORT || 8080;
 
