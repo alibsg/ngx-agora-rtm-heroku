@@ -22,7 +22,7 @@ var generateAccessToken = function (req, resp) {
     resp.header('Access-Control-Allow-Origin', "*")
 
     var user = req.query.user;
-    if (!channel) {
+    if (!user) {
         return resp.status(500).json({ 'error': 'user name is required' });
     }
 
@@ -39,6 +39,5 @@ app.get('/access_token', nocache, generateAccessToken);
 
 app.listen(PORT, function () {
     console.log('Service URL http://127.0.0.1:' + PORT + "/");
-    console.log('Channel Key request, /access_token?uid=[user id]&channel=[channel name]');
-    console.log('Channel Key with expiring time request, /access_token?uid=[user id]&channel=[channel name]&expiredTs=[expire ts]');
+    console.log('Channel Key request, /access_token?user=[user account]');
 });
